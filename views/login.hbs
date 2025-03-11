@@ -1,0 +1,17 @@
+{{!-- login.hbs --}}
+<h1>Welcome to the Gallery</h1>
+<h2>Login</h2>
+
+{{#if error}}
+<p style="color:red;">{{error}}</p>
+{{/if}}
+
+<form action="/login" method="POST">
+    <label>Username:</label>
+    <input type="email" name="username" required placeholder="Enter your email">
+    <br>
+    <label>Password:</label>
+    <input type="password" name="password" required placeholder="Enter your password">
+    <br>
+    <button type="submit">Login</button>
+</form>

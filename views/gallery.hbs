@@ -1,0 +1,27 @@
+{{!-- gallery.hbs --}}
+<h1>Welcome to the Gallery, {{username}}!</h1>
+<p>Hover over username for logout link</p>
+
+<a href="/logout" id="logout-link" style="display:none;">Logout</a>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let userElement = document.querySelector("h1");
+        let logoutLink = document.getElementById("logout-link");
+
+        userElement.addEventListener("mouseover", function () {
+            logoutLink.style.display = "block";
+        });
+
+        userElement.addEventListener("mouseout", function () {
+            logoutLink.style.display = "none";
+        });
+    });
+</script>
+
+<h2>Gallery</h2>
+<div>
+    {{#each images}}
+        <img src="/images/{{this}}" alt="Gallery Image" width="200">
+    {{/each}}
+</div>

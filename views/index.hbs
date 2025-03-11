@@ -1,0 +1,15 @@
+<form action="/image" method="GET">
+    <h2>Select a Toronto team's logo</h2>
+
+    {{#each images}}
+        <label>
+            <input type="radio" name="img" value="{{this}}">
+            {{this}}
+        </label><br>
+    {{/each}}
+
+    <button type="submit">Submit</button>
+</form>
+
+<h3>Selected team logo:</h3>
+<img src="/images/{{selectedImage}}" alt="Selected team logo" width="400">
